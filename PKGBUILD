@@ -2,8 +2,17 @@ pkgname=flutter-cache-cleanup
 pkgver=1.0.0
 pkgrel=1
 pkgdesc="Pacman hook to cleanup flutter-bin cache and FUSE mounts"
-arch=('ANY')
+arch=('any')
 license=('MIT')
+
+depends=(
+  'fuse3'
+  'util-linux'
+)
+
+optdepends=(
+  'flutter-bin: package whose cache is cleaned by this hook'
+)
 
 package() {
   install -Dm755 flutter-cache-cleanup \
