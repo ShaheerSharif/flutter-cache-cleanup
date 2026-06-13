@@ -5,7 +5,7 @@ This flutter setup includes a pacman post transaction hook which clears flutter 
 ## Setup
 
 ```sh
-# cp zz-99-custom-flutter-cache-clear.hook /etc/pacman.d/hooks/zz-99-custom-flutter-cache-clear.hook
-# install -m755 flutter-cache-cleanup /usr/local/bin/flutter-cache-cleanup
+$ sudo cp zz-99-custom-flutter-cache-clear.hook /etc/pacman.d/hooks/zz-99-custom-flutter-cache-clear.hook
+$ sudo install -m755 flutter-cache-cleanup /usr/local/bin/flutter-cache-cleanup
 ```
 
