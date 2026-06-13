@@ -22,7 +22,7 @@ optdepends=(
 
 package() {
   install -Dm755 "$srcdir/${_pkgname}" \
-    "$pkgdir/usr/local/bin/${_pkgname}"
+    "$pkgdir/usr/bin/${_pkgname}"
 
   install -Dm644 "$srcdir/${_pkgname}.hook" \
     "$pkgdir/usr/share/libalpm/hooks/${_pkgname}.hook"
