@@ -1,0 +1,12 @@
+[Trigger]
+Operation = Install
+Operation = Remove
+Operation = Upgrade
+Type = Package
+Target = flutter-bin
+
+[Action]
+Description = Cleaning Flutter FUSE mount and cache...
+When = PostTransaction
+Exec = /usr/local/bin/flutter-cache-cleanup
+

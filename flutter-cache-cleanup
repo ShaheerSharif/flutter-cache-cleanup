@@ -1,0 +1,18 @@
+#!/bin/bash
+set -euo pipefail
+
+for home in /home/*; do
+  [ -d "$home" ] || continue
+
+  user=$(basename "$home")
+
+  flutterSdk="$home/.cache/flutter_sdk"
+  flutterLocal="$home/.cache/flutter_local"
+
+  if mountpoint -q "$flutterSdk" 2>/dev/null; then
+    sudo -u "$user" fusermount -uq "$flutterSdk" || true
+  fi
+
+  rm -rf "$flutterSdk"
+  rm -rf "$flutterLocal"
+done
